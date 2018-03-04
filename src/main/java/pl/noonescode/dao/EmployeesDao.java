@@ -1,7 +1,5 @@
 package pl.noonescode.dao;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
 import pl.noonescode.employee_management_system.model.Employee;

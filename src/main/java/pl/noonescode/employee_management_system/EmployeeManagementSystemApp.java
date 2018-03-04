@@ -1,19 +1,16 @@
 package pl.noonescode.employee_management_system;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
 
+import pl.noonescode.dao.EmployeeDaoHibernateImpl;
 import pl.noonescode.dao.EmployeesDao;
 import pl.noonescode.dao.EmployeesDaoJdbcImpl;
 import pl.noonescode.employee_management_system.model.Employee;
 
 public class EmployeeManagementSystemApp {
 
-	private static EmployeesDao emplDao = new EmployeesDaoJdbcImpl();
+	private static EmployeesDao emplDao = new EmployeeDaoHibernateImpl();
 
 	private static Scanner sc;
 
@@ -157,7 +154,7 @@ public class EmployeeManagementSystemApp {
 		printIdSelectionQuery();
 		Integer id = getIntFromScanner();
 		Boolean employeeExists = emplDao.checkIfEmployeeIsInDatabase(id);
-		if(employeeExists == false) {
+		if(employeeExists == null || employeeExists == false) {
 			System.out.println("Such employee does not exist");
 			return;
 		} 

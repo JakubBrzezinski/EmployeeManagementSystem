@@ -12,7 +12,7 @@ import java.util.List;
 import pl.noonescode.config.DatabaseConfig;
 import pl.noonescode.employee_management_system.model.Employee;
 
-public class EmployeesDaoJdbcImpl implements EmployeesDao {
+public class EmployeesDaoJdbcImpl implements EmployeesDao  {
 
 	static final String SELECT_ALL_EMPLOYEES_SQL = "SELECT * From employees";
 	static final String INSTER_INTO_DATABASE = "insert into employees (name, surname, age) values (?, ?, ?);";
